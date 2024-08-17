@@ -1,47 +1,43 @@
+/*
+Find Minimum in Rotated Sorted Array:
+Suppose an array of length n sorted in ascending order is rotated between 1 and n times.
+
+For example, the array nums = [0,1,2,4,5,6,7] might become:
+[4,5,6,7,0,1,2] if it was rotated 4 times.
+[0,1,2,4,5,6,7] if it was rotated 7 times.
+
+Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array 
+[a[n-1], a[0], a[1], a[2], ..., a[n-2]].
+Given the sorted rotated array nums of unique elements, return the minimum element of this array.
+You must write an algorithm that runs in O(log n) time.
+*/
+
 #include <stdio.h>
-#include <stdlib.h>
 
-int *sort(int *arr1, int *arr2, int n, int m);
+int minInRotArray(int nums[], int n);
 
-int main(){
-    int arr1[] = {1, 3, 5, 0, 0, 0};
-    int arr2[] = {2, 4, 6, 8, 10};
-    int *sortedArr = sort(arr1, arr2, 3, 5);
-
-    for(int i = 0; i < 3 + 5; i++){
-        printf("%d ", sortedArr[i]);
-    }
-
-    return 0;
+void main(){
+    int nums[] = {3, 1, 2};
+    int n = sizeof(nums) / sizeof(nums[0]);
+    int minVal = minInRotArray(nums, n);
+    printf("%d", minVal);
 }
 
-int *sort(int *arr1, int *arr2, int n, int m){
-    int *sortedArr = malloc(n + m + 1 * sizeof(int));
-    int k = 0;
-    int i = 0;
-    int j = 0;
+int minInRotArray(int nums[], int n){
+    int s = 0;
+    int e = n - 1;
+    int m;
 
-    while(i < n && j < m){
-        if(arr1[i] < arr2[j]){
-            sortedArr[k] = arr1[i];
-            i++;
+    while(s <= e){
+        if(nums[s] <= nums[e])
+            return nums[s];
+
+        m = (s + e) / 2;
+
+        if(nums[m] < nums[s]){
+            e = m;
         } else{
-            sortedArr[k] = arr2[j];
-            j++;
+            s = m + 1;
         }
-
-        k++;
     }
-
-    while(i < n){
-        sortedArr[k] = arr1[i];
-        i++; k++;
-    }
-
-    while(j < m){
-        sortedArr[k] = arr2[j];
-        j++; k++;
-    }
-
-    return sortedArr;
 }
