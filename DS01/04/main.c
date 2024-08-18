@@ -34,7 +34,7 @@ int minInRotArray(int nums[], int n){
 
         m = (s + e) / 2;
 
-        if(nums[m] < nums[s]){
+        if(nums[s] > nums[m]){
             e = m;
         } else{
             s = m + 1;
