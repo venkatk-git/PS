@@ -1,35 +1,30 @@
 /*
-Quick Sort
+Selection Sort
 */
 
 #include <stdio.h>
 
-void quickSort(int arr[], int s, int e);
-void swap(int *a, int *b);
+void selectionSort(int arr[], int n);
 void printArr(int arr[], int n);
+void swap(int *a, int *b);
 
 void main(){
     int arr[] = {2, 4, 7, 1, 0, 12, 10, 9, 20, 6, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    quickSort(arr, 0, n - 1);
+    selectionSort(arr, n);
     printArr(arr, n);
 }
 
-void quickSort(int arr[], int s, int e){
-    if(s < e){
-        int pivot = arr[e];
-        int swapWith = s;
+void selectionSort(int arr[], int n){
+    for(int i = 0; i < n; i++){
+        int currMin = i;
 
-        for(int i = s; i < e; i++){
-            if(arr[i] < pivot)
-                swap(&arr[i], &arr[swapWith++]);
-        }
+        for(int j = i; j < n; j++)
+            if(arr[j] < arr[currMin])
+                currMin = j;
 
-        swap(&arr[e], &arr[swapWith]);
-
-        quickSort(arr, s, swapWith - 1);
-        quickSort(arr, swapWith + 1, e);
+        swap(&arr[i], &arr[currMin]);
     }
 }
 
