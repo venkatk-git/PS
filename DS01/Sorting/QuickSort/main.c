@@ -21,12 +21,13 @@ void quickSort(int arr[], int s, int e){
         int pivot = arr[e];
         int startsWith = s;
 
-        for(int i = s; i < e; i++)
+        for(int i = s; i < e; i++){
             if(arr[i] < pivot)
                 swap(&arr[i], &arr[startsWith++]);
+        }
 
         swap(&arr[e], &arr[startsWith]);
-
+        
         quickSort(arr, s, startsWith - 1);
         quickSort(arr, startsWith + 1, e);
     }
