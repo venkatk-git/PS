@@ -19,16 +19,16 @@ void main(){
 void quickSort(int arr[], int s, int e){
     if(s < e){
         int pivot = arr[e];
-        int swapWith = s;
+        int startsWith = s;
 
         for(int i = s; i < e; i++)
             if(arr[i] < pivot)
-                swap(&arr[i], &arr[swapWith++]);
+                swap(&arr[i], &arr[startsWith++]);
 
-        swap(&arr[e], &arr[swapWith]);
+        swap(&arr[e], &arr[startsWith]);
 
-        quickSort(arr, s, swapWith - 1);
-        quickSort(arr, swapWith + 1, e);
+        quickSort(arr, s, startsWith - 1);
+        quickSort(arr, startsWith + 1, e);
     }
 }
 
