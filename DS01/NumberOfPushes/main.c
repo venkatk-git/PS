@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
-void swap(int *a, int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
+#include "../../utils/swap.c"
 
 void quickSort(int arr[], int s, int e){
     if(s >= e) return;
