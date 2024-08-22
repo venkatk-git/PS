@@ -3,10 +3,10 @@ Quick Sort
 */
 
 #include <stdio.h>
+#include "../../../utils/printArr.c"
+#include "../../../utils/swap.c"
 
 void quickSort(int arr[], int s, int e);
-void swap(int *a, int *b);
-void printArr(int arr[], int n);
 
 void main(){
     int arr[] = {2, 4, 7, 1, 0, 12, 10, 9, 20, 6, 5};

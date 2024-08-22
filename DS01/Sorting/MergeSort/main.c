@@ -3,10 +3,9 @@ Merge Sort
 */
 
 #include <stdio.h>
+#include "../../../utils/printArr.c"
 
 void mergeSort(int arr[], int s, int e);
-void merger(int arr[], int s, int m, int e);
-void printArr(int arr[], int n);
 
 void main(){
     int arr[] = {2, 4, 7, 1, 0, 12, 10, 9, 20, 6, 5};
@@ -53,18 +52,4 @@ void merger(int arr[], int s, int m, int e){
     while(r < Rn)
         arr[i++] = R[r++];
 }
-
-
-void printArr(int arr[], int n){
-    printf("[");
-
-    for(int i = 0; i < n; i++){
-        printf("%d", arr[i]);
-        if(i != n - 1)
-            printf(", ");
-    }
-    
-    printf("]");
-}
-
 
