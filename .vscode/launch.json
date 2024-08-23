@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Projects/PS/DS01/Sorting/BubbleSort",
-      "program": "d:/Projects/PS/DS01/Sorting/BubbleSort/build/Debug/outDebug",
+      "cwd": "d:/Projects/PS/DS01/SortSentence",
+      "program": "d:/Projects/PS/DS01/SortSentence/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

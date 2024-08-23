@@ -9,11 +9,12 @@ Output : 500000
 */
 
 #include <stdio.h>
+#include "../../utils/swap.c"
+#include "../../utils/max.c"
 
 int maxProductThree(int arr[], int n);
 int max(int a, int b);
 void sort(int arr[], int n);
-void swap(int *a, int *b);
 
 void main(){
     int arr[] = {1, 5, 9, 100, -100, 20, 3, 23, 200, -25};
@@ -33,16 +34,6 @@ int maxProductThree(int arr[], int n){
     int max2 = arr[0] * arr[1] * a;
 
     return max(max1, max2);
-}
-
-int max(int a, int b){
-    return a > b ? a : b;
-}
-
-void swap(int *a, int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
 }
 
 void sort(int arr[], int n){
