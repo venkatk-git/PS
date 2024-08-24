@@ -59,6 +59,7 @@ void zigzag(int n, int m, int matrix[n][m]){
             while (i - 1 >= 0 && j + 1 < m)
                 arr[k++] = matrix[i--][j++];
         }
+        
         r = !r;
     }
 
