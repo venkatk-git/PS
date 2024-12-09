@@ -54,7 +54,7 @@ void selectionSort(int nums[], int n) {
         
         swap(&nums[i], &nums[minIndex]);
 
-        // Printing
+        // Printing current iteration
         printf("Iteration %d --> ", i + 1);
         for(int i = 0; i < n; i++) {
             printf("%d ", nums[i]);
