@@ -1,5 +1,5 @@
 /*
-Sort the given array using merge sort.
+Sort the given array using "Merge Sort".
 
 Input:
 5
